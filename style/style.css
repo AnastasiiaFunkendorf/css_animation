@@ -1,0 +1,218 @@
+body {
+    margin: 0;
+    padding: 1% 7%;
+    font-size: 175px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.diamonds,
+.hearts,
+.clubs,
+.spades {
+    position: relative;
+    /*transform: perspective(200px) rotateX(5deg);*/
+}
+
+.diamonds {
+    color: #ff6609;
+}
+
+.hearts {
+    margin-top: 192px;
+    color: #ed1a23;
+}
+
+.clubs {
+    margin-top: 384px;
+    color: #373a38;
+}
+
+.spades {
+    margin-top: 576px;
+    color: #010101;
+}
+
+.diamonds div,
+.hearts div,
+.clubs div,
+.spades div {
+    position: absolute;
+    width: 108px;
+    height: 162px;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transition-property: transform;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+.diamonds .back {
+    border-color: #ff6609;
+}
+
+.hearts .back {
+    border-color: #ed1a23;
+}
+
+.clubs .back {
+    border-color: #373a38;
+}
+
+.spades .back {
+    border-color: #010101;
+}
+
+span {
+    display: inline-block;
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    top: -51px;
+    left: -8px;
+}
+
+.seven {
+    left: 10px;
+    animation: go-seven 5s 2s forwards;
+}
+
+.eight {
+    left: 20px;
+    animation: go-eight 5s 2s forwards;
+}
+
+.nine {
+    left: 30px;
+    animation: go-nine 5s 2s forwards;
+}
+
+.ten {
+    left: 40px;
+    animation: go-ten 5s 2s forwards;
+}
+
+.jack {
+    left: 50px;
+    animation: go-jack 5s 2s forwards;
+}
+
+.lady {
+    left: 60px;
+    animation: go-lady 5s 2s forwards;
+}
+
+.king {
+    left: 70px;
+    animation: go-king 5s 2s forwards;
+}
+
+.ace {
+    left: 80px;
+    animation: go-ace 5s 2s forwards;
+}
+
+@keyframes go-seven {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 130px;
+    }
+}
+
+@keyframes go-eight {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 260px;
+    }
+}
+
+@keyframes go-nine {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 390px;
+    }
+}
+
+@keyframes go-ten {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 520px;
+    }
+}
+
+@keyframes go-jack {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 650px;
+    }
+}
+
+@keyframes go-lady {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 780px;
+    }
+}
+
+@keyframes go-king {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 910px;
+    }
+}
+
+@keyframes go-ace {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 1040px;
+    }
+}
+
+.front {
+    background: url("../img/bg.jpg") no-repeat;
+    background-size: cover;
+    z-index: 999;
+    backface-visibility: hidden;
+    border: 4px solid #1b2c4a;
+}
+
+.back {
+    z-index: 2;
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    border: 4px solid #1b2c4a;
+    background-color: #fff;
+}
+
+.diamonds div:hover .dfront,
+.hearts div:hover .hfront,
+.clubs div:hover .cfront,
+.spades div:hover .sfront {
+    transform: rotateY(-180deg);
+}
+
+
+.diamonds div:hover .dback,
+.hearts div:hover .hback,
+.clubs div:hover .cback,
+.spades div:hover .sback {
+    transform: rotateY(0deg);
+}
